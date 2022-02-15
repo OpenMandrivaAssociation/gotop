@@ -1,16 +1,15 @@
-%global goipath github.com/cjbassi/gotop
-%global commit 867cf2b9e4a4acfd8bbfbe5c8d67aa2450d669e2
-%gometa -i
+%global goipath github.com/xxxserxxx/gotop
+%define  _empty_manifest_terminate_build 0
 
 Name:     gotop
-Version:  3.0.0
+Version:  4.1.3
 Release:  1
 
 Summary:  A terminal based graphical activity monitor inspired by gtop and vtop
 License:  AGPL-3.0
 Group:    Other
-Url:      https://github.com/cjbassi/gotop
-Source0:  https://github.com/cjbassi/gotop/archive/%{version}.tar.gz
+Url:      https://github.com/xxxserxxx/gotop
+Source0:  https://github.com/xxxserxxx/gotop/archive/%{name}-%{version}.tar.gz
 
 BuildRequires: golang
 
@@ -18,10 +17,12 @@ BuildRequires: golang
 %summary
 
 %prep
-%setup -n %{name}-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
-%gobuild
+go build -o gotop \
+        -ldflags "-X main.Version=v${VERS} -X main.BuildDate=${DAT}" \
+        ./cmd/gotop
 
 %install
 mkdir -p %{buildroot}%{_bindir}
