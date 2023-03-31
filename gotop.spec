@@ -3,7 +3,7 @@
 
 Name:     gotop
 Version:  4.1.3
-Release:  1
+Release:  2
 
 Summary:  A terminal based graphical activity monitor inspired by gtop and vtop
 License:  AGPL-3.0
