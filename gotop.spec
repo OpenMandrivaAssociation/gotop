@@ -2,8 +2,8 @@
 %define  _empty_manifest_terminate_build 0
 
 Name:     gotop
-Version:  4.1.3
-Release:  2
+Version:  4.2.0
+Release:  1
 
 Summary:  A terminal based graphical activity monitor inspired by gtop and vtop
 License:  AGPL-3.0
